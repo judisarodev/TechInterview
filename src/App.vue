@@ -1,41 +1,68 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <!--Main Navbar-->
+    <nav>
+      <Navbar :items="menuItems" :title="menuTitle" />
+    </nav>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-    </v-app-bar>
-
+    <!--Web page container-->
     <v-main>
       <router-view />
     </v-main>
+
+    <!--Footer-->
+    <Footer :data="importantLinks"/>
   </v-app>
 </template>
 
 <script>
+import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
 export default {
   name: "App",
-
+  components: {
+    Navbar,
+    Footer
+  },
   data: () => ({
-    //
+    menuItems: [ // Menu options for the Navbar
+      { name: 'Home', route: 'Home' },
+      { name: 'About us', route: 'About' },
+      { name: 'Data', route: 'Data' },
+    ],
+
+    importantLinks: [ // Important links for the Footer
+      {
+          text: "Documentation",
+          href: "https://vuetifyjs.com",
+          icon: 'mdi-file-document-edit-outline'
+      },
+      {
+          text: "Chat",
+          href: "https://community.vuetifyjs.com",
+          icon: 'mdi-message'
+      },
+      {
+          text: "Made with Vuetify",
+          href: "https://madewithvuejs.com/vuetify",
+          icon: 'mdi-vuetify'
+      },
+      {
+          text: "Twitter",
+          href: "https://twitter.com/vuetifyjs",
+          icon: 'mdi-alpha-x-circle'
+      },
+      {
+          text: "Articles",
+          href: "https://medium.com/vuetify",
+          icon: 'mdi-information'
+      },
+      {
+          text: "Linkeding",
+          href: "https://www.linkedin.com/company/vuetify-llc/?originalSubdomain=co",
+          icon: 'mdi-linkedin'
+      },
+    ],
   }),
 };
 </script>

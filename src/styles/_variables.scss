@@ -1,0 +1,27 @@
+/* Global styles */
+
+// Colors
+$primary-color: #3874CB;
+$secondary-color: #42b983;
+$dark-primary-color: #35495e;
+$light-primary-color: #ffffff;
+$error-color: #ff5252;
+$warning-color: #ffc107;
+$info-color: #2196f3;
+$success-color: #4caf50;
+
+// Fonts sizes
+$font-small: 0.875rem;
+$font-medium: 1rem;
+$font-large: 1.25rem;
+$font-xlarge: 1.5rem;
+$font-xxlarge: 1.8rem;
+
+//Font family
+$font-stack: Helvetica, sans-serif;
+
+// Global font family and font color 
+body {
+  font-family: $font-stack;
+  color: $primary-color;
+}

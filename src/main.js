@@ -4,9 +4,12 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
+import './styles/_variables.scss';
 
+// Suppress the production tip message
 Vue.config.productionTip = false;
 
+// Vue instance
 new Vue({
   router,
   store,
